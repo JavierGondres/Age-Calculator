@@ -1,10 +1,29 @@
 import styled from "styled-components";
-import TextField from "@mui/material/TextField";
+import {styled as muiStyled } from '@mui/material/styles';
+import { InputBase } from "@mui/material";
 
-export const Input = styled(TextField)`
-  width: 150px;
-  font-size: 5rem;
-`;
+export const Input = muiStyled(InputBase)({
+  '& .MuiInputBase-input': {
+    fontSize: "2rem",
+    fontWeight: "700",
+    color: "black",
+    maxWidth: "125px",
+    height: "30px",
+    border: "1px solid black",
+    borderRadius: "5px",
+    padding: "1rem",
+    '&:focus': {
+      borderColor: "hsl(259,100%,65%)",
+    },
+  },
+});
+
+export const Label = muiStyled('label')({
+  color: " hsl(0, 1%, 44%)",
+  fontSize: "0.8rem",
+  fontWeight: "600",
+  letterSpacing: "2px"
+})
 
 export const Linea = styled.div`
   width: 100%;
